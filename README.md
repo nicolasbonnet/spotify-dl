@@ -113,6 +113,20 @@ docker run -it --user=$(id -u):$(id -g) -v $(pwd):/download --rm spotify-dl <opt
 docker run -it --user=$(id -u):$(id -g) -v $(pwd):/download --rm spotify-dl "https://open.spotify.com/...."
 ```
 
+## Using my dockerhub build image:
+First of all, pull the image:
+```sh
+#be sure to be logged to docker hub
+docker login
+
+#then pull the image:
+docker pull nicolasbonnet/spotifydl:latest
+
+#Thus, you can use this image to launch container and use it like this:
+docker run -it --user=$(id -u):$(id -g) -v $(pwd):/download --rm nicolasbonnet/spotifydl https://open.spotify.com/playlist/05463IDWlbHHbW22NlugkH
+
+```
+
 #### Acknowledgements
 
 thanks to [icons8](https://icons8.com) for icons in hero image
